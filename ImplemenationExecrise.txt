@@ -1,0 +1,129 @@
+JS LOOPS AND FUNCTIONS 
+
+Part 1 : Control Flow 
+
+a) Javascript is loosely types, so whenever a value is used where a boolean is expected eg inside an if conditio, a while loop, the ! operator, a ternary, &&/|| the engine automatically coerces
+it to true or false.
+
+a falsy value is one that coerces to false
+a truthy value is one that coerces to true
+
+The Falsy values ->  false - The boolean itself
+                     0 - The number zero
+                     -0 - Negative Zero
+                     On  - BigInt zero
+                     "" - An empty string
+                     null - Intentional absence of a value
+
+The Truthy values -> Boolean(1) 
+                     Boolean(true); 
+                     Boolean({}); - empty object
+                     Boolean([]); - empty array
+                     Boolean("null");
+
+
+b) Logical operator || (OR) evaluates left to Right and returns the first truthy operand. If none are truthy, it returns the lat operand.
+      eg.  "hello" || "world"; // "hello" (left is truthy, right is never evaluated)
+            0 || "fallback"; // "fallback" (left is falsy, so right is returned)                  
+
+   Logical operator && (AND) evaluated left to right and returns the first falsy operand. If all are truthy, it returns the last operand
+      eg.  0 && "world"; // 0 (left is falsy, right is never evaluated)
+           "hello" && "world"; // "world" (both truthy, last one returned) 
+
+c)  (===) is recommended because it never converts types. (==) does and that hidden conversion (type coercion) produces results that are hard to predict and easy
+to get wrong  
+
+(==) loose equality -> if the operand and types differ, javascript first coerces them to a common type, then compares
+(===) strict equality compares value and type. Different types always get give false
+
+
+d)  const x = "5";
+    const y = 5;
+
+    if (x == y && typeof x === "string") {
+        console.log("Result A");
+    } else if (x === y || x > 0) {
+        console.log("Result B");
+    } else {
+        console.log("Result C");
+    }
+
+
+    The first if block executes, so the output is Result A -> 
+    
+            (x==y) x is a string "5" while y is a number 5.
+
+            the == operator performs type coercion when the types are different, javascript converts the string "5" to the number 5:
+
+            "5" == 5 // true
+
+            then: 
+
+            typeof x === "string"
+
+            since x was declared as:
+
+            const x = "5";
+
+            it is indeed "string"
+
+            typeof x === "string" //true 
+
+            therefore 
+
+            true && true
+
+            is true so the first block excutes.
+
+            The else if and else blocks are never evaluated/executed.
+
+
+6)  nested structure 
+
+            const age = 20;
+            const hasID = true;
+
+            if (age >= 18) {
+                if (hasID) {
+                    console.log("Access granted");
+                } else {
+                    console.log("ID required");
+                }
+            } else {
+                console.log("Access denied");
+            }
+
+    ternary operator
+
+            const result = age >= 18
+            ? (hasID ? "Access granted" : "ID required")
+            : "Access denied";
+
+            console.log(result);
+
+
+    using switch
+
+            const role = "admin";
+
+            switch (role) {
+                case "admin":
+                    console.log("Full access");
+                    break;
+
+                case "editor":
+                    console.log("Edit access");
+                    break;
+
+                case "user":
+                    console.log("Limited access");
+                    break;
+
+                default:
+                    console.log("No access");
+            }
+
+
+    if ... else best suited for complex conditions and ranges
+    ternary ? : best suited for short conditional expressions
+    switch best suited for comparing one value  against several specific cases        

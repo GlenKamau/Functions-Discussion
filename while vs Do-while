@@ -1,0 +1,13 @@
+let batteryPercentage = 0; // The battery is completely dead!
+
+console.log("--- Testing Standard WHILE Loop ---");
+while (batteryPercentage > 0) {
+    console.log("The flashlight turns on!"); // This never runs
+    batteryPercentage--;
+}
+
+console.log("--- Testing DO...WHILE Loop ---");
+do {
+    console.log("The flashlight sparks once before dying!"); // This RUNS ONCE
+    batteryPercentage--;
+} while (batteryPercentage > 0);

@@ -1,0 +1,4 @@
+i = 0: j runs 3, 2, 1 (stops when j = 0, since 0 > 0 is false) → 3 increments
+i = 1: j runs 3, 2 (stops when j = 1) → 2 increments
+i = 2: j runs 3 (stops when j = 2) → 1 increment
+i = 3: outer loop ends (3 < 3 is false)

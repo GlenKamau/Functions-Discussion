@@ -1,0 +1,58 @@
+PART 1: DISCUSSION QUESTIONS
+
+1. Explain the differences between var, let, and const in JavaScript regarding 
+variable scope, hoisting, and reassignment?
+
+a)Variable scope- var is functioned scoped meaning it can be accesed anywhere within the function while let 
+and const are only accesible within the specific block they are defined in.
+
+b)Hoisting - var are hosted but automatically initialized with a value of undefined while let and const are 
+not initialized
+
+c)Reassignment - var can be redeclared and reassigned 
+                 Let cannot be redeclared but it can be assigned
+                 const cannot be reassigned nor redeclared
+
+
+2.What are the primitive data types available in JavaScript, and how do they fundamentally differ from reference 
+types like arrays and objects? 
+primitive data types eg numbers, strings, boolean, symbols,undefined, and null are immutable whereas non primitive 
+data types eg Arrays and objects are mutable.
+
+3.Discuss the difference between loose equality (==) and strict equality (===). Why is strict equality generally considered a best practice?
+loose equality assumes you want to convert one or both values into a matching tyoe while strict equality compares both the value and the data
+ type without changing them.
+
+ 4.How do logical operators (&&, ||, ---) evaluate expressions, and what is meant by "short-circuit evaluation"?
+short circuit evaluation means javascript will stop evaluating a logical expression as long as the outcome is guaranteed
+Logical && - if the first value is falsley, it returns that falsey value immediately
+if the first value is truthy it moves on and returns the second value
+
+5.Describe how a conditional switch statement can be used as an alternative to a long chain of if...else if statements, and explain the role of the default keyword.
+- a switch statement provides a cleaner way to evaluate a single expression against multiple values  replacing a long cluttered chain of if else if statements
+the default keyword acts as a catch all safety net by running automatically if the expression does not match the specified case values
+
+JS LOOPS AND FUNCTIONS
+Part 2: Iteration(For & While Loops)
+1.The Loop Lifecycle: Identify the three expressions inside a for loop header: for(initialization; condition; final-expression). At exactly what point in the iteration cycle does the final-expression execute?
+The threee expressions include:
+a)initialization -  Runs only once before the loop begins.It is used to declare and initialize a counter variable
+b)Condition - it acts as a checkpoint, it is evaluated before every single iteration.If it evaluates true, the loop continues but if it evaluates false the loop stops immediately.
+c)Final-expression - evaluated after the loop body executes, but before the condition is checked for the next round
+The final- expression is is executed at the very end of the current iterarion cycle, after the entire code block has finished running.
+
+2.Termination Hazards: What is a "loop invariant," and how does a programmer ensure a while loop eventually reaches its termination condition?
+a aloop invariant is a condition or a statement about your program's data that is always true at the start and end of every single loop iteration
+
+How to ensure a loop terminates: use these core rules
+a. Define a clear exit condition - the loop must rely on a condition that can evaluate to false otherwise it will never stop.
+b. Progressively move closer to the exit - on the body of the loop ,you must change the variables of the condition so they mathematically edge to making the condition false.
+c. The safety Break - if dealing with complex data, insert a hard limit counter as a backup.
+
+3.Break vs. Continue: Define the difference between the break and continue keywords. How do they affect the "counter" or "iterator" in a loop?
+
+the difference is that break kills  the loop completely while continue skips the rest of the cut onerrent lap anf=d jumps straight to the next one.
+because a for loop manages its lifecycle automaticallyin its header,"continue "safely handles your counter.
+for whcan accidentaly trap you in an infinite loop if you arent carefullile because you have to manually update your counter, using continue 
+
+4. Array Traversal: Write a for loop that iterates through an array of numbers but skips every even number and stops entirely if it encounters a negative number.

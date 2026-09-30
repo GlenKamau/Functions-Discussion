@@ -1,0 +1,30 @@
+PART 3:functions(Anatomy and Execution)
+Q1. funtion declaration is a way of creating a function and giving it a name and writing the instruction it shoul perform(mostly in java script)
+        function greet() {
+         console.log("Hello!");
+        }
+        greet();
+
+        functional expression is a way of telling the function to run and also since they are using let and const are not oisted.
+          const greet =function() }
+          console.log("Hello");
+          };
+          sayHello();
+Q2. They both can give functionand ability to acces the values passed to them.
+     Arguments is a special arry object that is automatically availabe in a non arrow function 
+      and values are passed no matter how many parameters are avilable.
+      Arguments are also preferred in javascript because it is much clearer.
+            function showColors(...args) {
+              console.log(args);
+        
+    Args" is short for arguments: the enables you pass into a function when you call it. 
+     ....syntax allows javascript to collect passed to the function in the arry
+Q3. The return stops the function immediately 
+    and the function evaluates to undefined
+        function greet() {
+         return;
+        console.log("This line never runs");
+        ]
+    const result = greet();
+    console.log(result); // undefined
+    then everything after the return it goes back to the caller and makes the return useful again and the value used to evaluatesis undefined.
